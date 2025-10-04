@@ -1,0 +1,64 @@
+import logging
+import requests
+from requests import Timeout, RequestException
+from app.core.config import GOOGLE_BOOKS_BASE_URL, REQUEST_TIMEOUT
+from app.core.cache import ttl_cache
+from app.services.google_books_utils import _pick_image, serialize_book, clean_description
+from typing import Any
+
+
+logger = logging.getLogger(__name__)
+BASE = GOOGLE_BOOKS_BASE_URL
+
+
+@ttl_cache(ttl_seconds=300, maxsize=100)
+def search_books(query: str, start_index: int = 0, max_results: int = 20) -> dict[str, Any]:
+    params = {
+        "q": query,
+        "startIndex": start_index,
+        "maxResults": max_results,
+        "printType": "books",  
+        "fields": "items(id,volumeInfo/title,volumeInfo/authors,volumeInfo/imageLinks)",
+    }
+    try:
+        response = requests.get(f"{BASE}/volumes", params=params, timeout=REQUEST_TIMEOUT)
+        response.raise_for_status()
+        
+        data = response.json()
+        items = data.get("items", [])
+
+        return {
+                "total": data.get("totalItems", 0),
+                "items": [serialize_book(item) for item in items],
+            }
+
+    except Timeout as e:
+        logger.warning("Google Books search timeout: %s", e)
+        raise
+    except RequestException as e:
+        logger.error("Google Books search error: %s", e)
+        raise
+
+
+@ttl_cache(ttl_seconds=600, maxsize=200)
+def get_book(volume_id: str) -> dict:
+    try:
+        response = requests.get(f"{BASE}/volumes/{volume_id}", timeout=REQUEST_TIMEOUT)
+        response.raise_for_status()
+        data = response.json()
+
+        book = serialize_book(data)
+
+        info = data.get("volumeInfo", {})
+        description = clean_description(info.get("description", ""))
+        if description:
+            book["description"] = description
+
+        return book
+    
+    except Timeout as e:
+        logger.warning("Google Books get timeout: %s", e)
+        raise
+    except RequestException as e:
+        logger.error("Google Books get error: %s", e)
+        raise
