@@ -1,3 +1,13 @@
+"""
+Main application entry point for the Book Finder backend.
+
+This module initializes the Flask application, sets up logging, CORS, 
+rate limiting, and registers all blueprints and error handlers. 
+It also includes a health check endpoint to verify server status 
+and clear the in-memory cache for the Google Books API service.
+"""
+
+
 from flask import Flask, jsonify
 from app import errors
 from app.core.logging import setup_logging
@@ -9,6 +19,16 @@ from requests import RequestException
 
 
 def create_app():
+    """
+    Initialize and configure the Flask application.
+
+    This function sets up logging, enables CORS and rate limiting,
+    registers blueprints for the API routes, and attaches global 
+    error handlers.
+
+    Returns:
+        Flask: The configured Flask application instance.
+    """
     setup_logging()
     app = Flask(APP_NAME)
 
@@ -17,6 +37,14 @@ def create_app():
 
     @app.get("/health")
     def health():
+        """
+        Health check endpoint.
+
+        Clears the search_books cache and verifies the server is running.
+
+        Returns:
+            tuple: A JSON response containing the app status and HTTP 200 code.
+        """
         search_books.cache_clear()
         logger.info("Cache cleared via /health")
         app.logger.info("Cache cleared via /health")
