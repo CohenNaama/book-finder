@@ -17,12 +17,17 @@ Book Finder provides a seamless book search experience:
 
 ##  System Architecture
 
-The application is split into two main layers:
+Below is a summary of the main technologies and their roles:
 
-| Layer | Technology Stack | Description |
-|-------|------------------|--------------|
-| **Backend (API)** | Flask, Flask-CORS, Flask-Limiter, Requests | Handles all RESTful endpoints, integrates with Google Books API, adds caching and rate limiting. |
-| **Frontend (Client)** | React (Vite), React Router, Axios, React Query, MUI | Displays UI, manages authentication, and fetches data via the Flask API. |
+
+| Layer             | Technology                                 | Description                                                                    |
+| ----------------- | ------------------------------------------ | ------------------------------------------------------------------------------ |
+| **Backend (API)** | Flask, Flask-CORS, Flask-Limiter, Requests | RESTful API integrating with Google Books, includes caching and rate limiting. |
+| **Frontend (UI)** | React (Vite), Material UI, Axios           | Search interface with authentication and animated components.                  |
+| **Testing**       | Pytest, unittest.mock                      | Automated unit and integration tests.                                          |
+| **API**           | Google Books API                           | External data source for book search and details.                              |
+
+
 
 ---
 
@@ -46,7 +51,7 @@ The application is split into two main layers:
 
 ---
 
-##  Design System & Theme
+##  Design & Theme
 
 The interface is built with **Material UI (MUI)** as the foundation, combined with **custom CSS** for visual refinement and micro-interactions.  
 The design focuses on simplicity, clarity, and consistency across all components.
@@ -86,8 +91,6 @@ frontend/
 ---
 
 ##  Backend Structure
-
-
 
 
 ```
@@ -195,7 +198,8 @@ npm run dev
 
 ---
 
-##  Testing
+
+## Testing
 
 Run backend tests with:
 
@@ -205,8 +209,23 @@ pytest -v
 
 **Tests include:**
 
-* Unit tests for caching and service logic
-* Integration tests for API endpoints
+* Unit tests for caching, Google Books services, and data serialization.
+* Integration tests for Flask routes using a test client fixture.
+* Mocked external API calls for isolated, reliable testing.
+
+Configuration is managed via `pytest.ini` for verbosity and path setup.
+
+Example output on success:
+
+```
+tests/test_books.py::test_clean_description_removes_html PASSED
+tests/test_books.py::test_search_books_returns_serialized PASSED
+tests/test_routes.py::test_health_endpoint PASSED
+tests/test_routes.py::test_search_books_endpoint PASSED
+```
+
+All tests pass successfully ✅
+
 
 ---
 
@@ -245,7 +264,8 @@ CORS setup ensures seamless API ↔ client communication.
 | **Backend**     | ✅ Complete  | Fully tested & documented   |
 | **Frontend**    | ✅ Complete  | Auth, UI, search, routing   |
 | **Design & UX** | ✅ Finalized | Theme + custom CSS tuned    |
+| **Testing**     | ✅ Complete  | Pytest suite successful |
 | **Deployment**  | ⚙️ Ready    | Environment-ready structure |
 
----
 
+---

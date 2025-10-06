@@ -7,7 +7,7 @@
 
 import { useState } from "react";
 import { signUp } from "../services/auth";
-import { TextField, Button,Link } from "@mui/material";
+import { TextField, Button,Link, Stack } from "@mui/material";
 import { useNavigate, Link as RouterLink } from "react-router-dom";
 import FormContainer from "../components/ui/FormContainer";
 import "../components/ui/AuthForms.css";
