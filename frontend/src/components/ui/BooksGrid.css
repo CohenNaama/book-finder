@@ -1,5 +1,9 @@
-
-/*  BooksGrid.css */
+/*
+ * Grid and layout styles for displaying search results.
+ *
+ * Defines card structure, responsive behavior, and hover effects.
+ * Emphasizes readability, spacing, and smooth motion transitions.
+ */
 
 
 .books-grid-container {

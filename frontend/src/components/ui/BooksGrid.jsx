@@ -1,3 +1,14 @@
+/**
+ * BooksGrid component.
+ *
+ * Displays a table of book results with cover, title, and authors.
+ * Fully responsive and styled with custom CSS (BooksGrid.css).
+ *
+ * Accepts props:
+ *  - rows: array of book data
+ *  - onRowClick: callback for book selection
+ */
+
 import PropTypes from "prop-types";
 import "./BooksGrid.css";
 

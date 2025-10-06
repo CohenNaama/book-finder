@@ -1,3 +1,12 @@
+/**
+ * Authentication service wrapper.
+ *
+ * Provides Firebase-based auth utilities — sign in, sign up,
+ * password reset, and sign out — all as reusable async functions.
+ *
+ * Abstracts direct Firebase calls for cleaner integration in React components.
+ */
+
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,

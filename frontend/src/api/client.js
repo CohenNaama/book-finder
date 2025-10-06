@@ -1,3 +1,12 @@
+/**
+ * Axios HTTP client configuration.
+ *
+ * Sets the base URL and default headers for API requests.
+ * Automatically manages environment-based endpoints using Vite env vars.
+ *
+ * Acts as the centralized Axios instance for all API modules.
+ */
+
 import axios from "axios";
 
 

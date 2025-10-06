@@ -1,3 +1,13 @@
+/**
+ * BookDetailsPage component.
+ *
+ * Displays detailed information for a selected book retrieved from the API.
+ * Includes a loading spinner, robust error handling, and a default fallback cover.
+ *
+ * Built with MUI Paper layout featuring soft hover animation and subtle backdrop blur.
+ */
+
+
 import { useParams, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getBook } from "../api/books.js";

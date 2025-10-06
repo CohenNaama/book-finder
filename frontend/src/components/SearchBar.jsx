@@ -1,3 +1,12 @@
+/**
+ * SearchBar component.
+ *
+ * Provides an input field and search button for querying books.
+ * Submits search terms via React Router navigation.
+ *
+ * Styled with custom CSS and MUI components for a clean, modern look.
+ */
+
 import { useState } from "react";
 import { Box, TextField, Button, InputAdornment, Stack } from "@mui/material";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";

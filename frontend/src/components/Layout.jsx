@@ -1,6 +1,13 @@
-import {
-  Container, AppBar, Toolbar, Typography, Box, Stack, Button
-} from "@mui/material";
+/**
+ * Layout component.
+ *
+ * Defines the main app structure with AppBar, navigation, and content area.
+ * Handles user authentication state and conditional rendering of Sign In/Out buttons.
+ *
+ * Utilizes Material UI Toolbar, Typography, and Stack for responsive alignment.
+ */
+
+import {Container, AppBar, Toolbar, Typography, Box, Stack, Button} from "@mui/material";
 import { Outlet, Link as RouterLink } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import { logout } from "../services/auth";

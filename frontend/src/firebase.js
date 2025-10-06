@@ -1,3 +1,10 @@
+/**
+ * Firebase configuration.
+ *
+ * Initializes Firebase App using environment variables.
+ * Used for authentication and persistence across sessions.
+ */
+
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 

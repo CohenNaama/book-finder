@@ -1,3 +1,10 @@
+/**
+ * FormContainer component.
+ *
+ * Provides a styled container for authentication forms (Sign In, Sign Up).
+ * Displays title, success/error alerts, and wraps form content.
+ */
+
 import PropTypes from "prop-types";
 import Alerts from "./Alerts";
 import "./AuthForms.css";

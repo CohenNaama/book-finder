@@ -1,3 +1,12 @@
+/**
+ * SearchPage component.
+ *
+ * Displays the main hero section with search input for books.
+ * Provides access to the SearchBar component and styled hero design.
+ * 
+ * UX: Glassmorphic card with hover animation and responsive layout.
+ */
+
 import { Box, Stack, Typography} from "@mui/material";
 import SearchBar from "../components/SearchBar.jsx";
 import "../components/ui/SearchHero.css";

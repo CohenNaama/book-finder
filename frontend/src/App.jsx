@@ -1,3 +1,10 @@
+/**
+ * App root component.
+ *
+ * Defines all application routes and global providers.
+ * Integrates React Query, Firebase auth context, and routing structure.
+ */
+
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout.jsx";
 import SearchPage from "./pages/SearchPage.jsx";

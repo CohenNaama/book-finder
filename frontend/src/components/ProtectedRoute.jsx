@@ -1,4 +1,12 @@
-// src/components/ProtectedRoute.jsx
+/**
+ * Route guard component for authenticated pages.
+ *
+ * Wraps protected routes and redirects unauthenticated users to the Sign In page.
+ * Uses the `useAuth` hook for session validation.
+ *
+ * Ensures that only logged-in users can access restricted routes.
+ */
+
 import { Navigate } from "react-router-dom";
 import { CircularProgress, Box } from "@mui/material";
 import useAuth from "../hooks/useAuth";

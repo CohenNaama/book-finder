@@ -1,5 +1,9 @@
-
-/* SearchHero.css */
+/*
+ * Hero section styles for the home/search page.
+ *
+ * Implements backdrop blur, gradient backgrounds, and adaptive padding.
+ * Creates a clean, modern “glass” visual effect with subtle motion.
+ */
 
 
 .search-hero {

@@ -1,3 +1,10 @@
+/**
+ * Spinner component.
+ *
+ * Displays a centered loading spinner using MUI CircularProgress.
+ * Used during async data fetching across pages.
+ */
+
 import { CircularProgress, Box } from "@mui/material";
 import "./ui.css";
 

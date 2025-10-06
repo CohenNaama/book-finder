@@ -1,3 +1,12 @@
+/**
+ * API service for book-related operations.
+ *
+ * Provides functions for searching books and fetching book details
+ * from the Flask backend, which integrates with the Google Books API.
+ *
+ * Exports clean, reusable API methods for frontend data fetching.
+ */
+
 import { api } from "./client";
 
 

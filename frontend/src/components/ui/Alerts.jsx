@@ -1,3 +1,10 @@
+/**
+ * Alerts component.
+ *
+ * Wrapper around MUI Alert for consistent alert styling and transitions.
+ * Supports types: "error", "info", "success", "warning".
+ */
+
 import { Alert } from "@mui/material";
 import PropTypes from "prop-types";
 import "./ui.css";

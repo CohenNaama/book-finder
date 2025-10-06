@@ -1,3 +1,12 @@
+/**
+ * Main entry point.
+ *
+ * Mounts the React app into the DOM and wraps it with global providers:
+ *  - QueryClientProvider
+ *  - BrowserRouter
+ *  - ThemeProvider
+ */
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";

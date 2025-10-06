@@ -1,3 +1,13 @@
+/**
+ * ResultsPage component.
+ *
+ * Displays a list of books based on user search queries, fetched from the backend API.
+ * Uses React Query for managing async loading, error, and empty result states.
+ *
+ * Renders BooksGrid for structured display and supports navigation to book details.
+ */
+
+
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { Box, Stack, Typography, Chip, Divider } from "@mui/material";

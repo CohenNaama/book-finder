@@ -1,3 +1,10 @@
+/**
+ * Page component for password recovery.
+ *
+ * Allows users to request a password reset via Firebase authentication.
+ * Displays confirmation or error messages based on API response.
+ */
+
 import { useState } from "react";
 import { forgotPassword } from "../services/auth";
 import { TextField, Button, Link } from "@mui/material";

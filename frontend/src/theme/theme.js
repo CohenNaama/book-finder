@@ -1,3 +1,10 @@
+/**
+ * MUI theme configuration.
+ *
+ * Defines global color palette, typography, and component overrides.
+ * Applied via ThemeProvider in main.jsx for consistent design language.
+ */
+
 import { createTheme } from "@mui/material/styles";
 
 export const theme = createTheme({

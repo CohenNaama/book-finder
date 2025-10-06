@@ -1,3 +1,12 @@
+/**
+ * useAuth custom hook.
+ *
+ * Manages Firebase authentication state (user + readiness).
+ * Uses browserLocalPersistence for persistent login sessions.
+ *
+ * Returns: { user, ready } — current user object and load flag.
+ */
+
 import { useEffect, useState } from "react";
 import { onAuth } from "../services/auth";
 import { setPersistence, browserLocalPersistence } from "firebase/auth";

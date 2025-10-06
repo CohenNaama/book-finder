@@ -1,5 +1,9 @@
-
-/*  AuthForms.css */
+/*
+ * Styles for authentication-related forms (Sign In, Sign Up, Forgot Password).
+ *
+ * Focuses on layout alignment, button consistency, and subtle hover states.
+ * Maintains a clean, minimal aesthetic with soft shadows and rounded inputs.
+ */
 
 
 .form-container {

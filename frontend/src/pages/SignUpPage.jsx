@@ -1,3 +1,10 @@
+/**
+ * Page component for user registration.
+ *
+ * Handles new account creation via Firebase.
+ * Validates inputs and provides real-time error feedback to users.
+ */
+
 import { useState } from "react";
 import { signUp } from "../services/auth";
 import { TextField, Button,Link } from "@mui/material";

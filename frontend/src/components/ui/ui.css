@@ -1,4 +1,10 @@
-/*  ui.css  */
+/*
+ * Global UI style definitions for reusable UI elements.
+ *
+ * Includes card shadows, button transitions, blur effects,
+ * and other shared visual utilities for cohesive design.
+ */
+
 
 body {
   background-color: #e3f2fd;

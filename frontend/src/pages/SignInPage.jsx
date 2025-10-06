@@ -1,3 +1,10 @@
+/**
+ * Page component for user sign-in.
+ *
+ * Provides login functionality through Firebase authentication.
+ * Includes form validation, feedback alerts, and redirect handling.
+ */
+
 import { useState } from "react";
 import { signIn } from "../services/auth";
 import { TextField, Button, Stack, Link } from "@mui/material";
