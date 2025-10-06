@@ -1,0 +1,66 @@
+/*  ui.css  */
+
+body {
+  background-color: #e3f2fd;
+  font-family: Inter, Heebo, Arial, sans-serif;
+  color: #0f172a;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* Spinner */
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.spinner {
+  color: #174e8c;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Alerts */
+.alert {
+  border-radius: 12px;
+  font-weight: 500;
+  box-shadow: 0 4px 16px rgba(23, 78, 140, 0.08);
+  margin: 10px 0 14px;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+.alert:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(23, 78, 140, 0.1);
+}
+
+
+.alert.MuiAlert-standardError {
+  background-color: rgba(245, 66, 66, 0.1);
+  border-left: 4px solid #d32f2f;
+}
+
+.alert.MuiAlert-standardSuccess {
+  background-color: rgba(56, 142, 60, 0.08);
+  border-left: 4px solid #388e3c;
+}
+
+.alert.MuiAlert-standardInfo {
+  background-color: rgba(23, 78, 140, 0.08);
+  border-left: 4px solid #174e8c;
+}
+
+.alert.MuiAlert-standardWarning {
+  background-color: rgba(245, 166, 35, 0.12);
+  border-left: 4px solid #f5a623;
+}
