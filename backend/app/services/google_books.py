@@ -58,6 +58,13 @@ def search_books(query: str, start_index: int = 0, max_results: int = 20) -> dic
     except Timeout as e:
         logger.warning("Google Books search timeout: %s", e)
         raise
+
+    except requests.exceptions.HTTPError as e:
+        if e.response is not None and e.response.status_code == 429:
+            logger.error("Google Books API rate limit reached")
+            raise RequestException("Google Books API rate limit reached. Please try again later.")
+        raise
+    
     except RequestException as e:
         logger.error("Google Books search error: %s", e)
         raise

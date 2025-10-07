@@ -10,7 +10,7 @@ The system is built with a **Flask backend** and a **React (Vite)** frontend - d
 Book Finder provides a seamless book search experience:
 - Secure user authentication with Firebase.
 - Real-time search powered by Google Books.
-- Elegant, responsive UI with Material UI (MUI) and custom CSS fine-tuning.
+- Modern, adaptive UI built with Material UI (MUI) and refined custom CSS styling.
 - Smooth animations, consistent theming, and accessibility in design.
 
 ---
@@ -45,9 +45,9 @@ Below is a summary of the main technologies and their roles:
 - **Authentication (Firebase)** - Sign up, Sign in, Password reset.
 - **Protected routes** - User must be authenticated to access main pages.
 - **Search experience** - Query books by title, author, or keyword.
-- **Responsive design** - Fully optimized for mobile and desktop layouts.
+- **Adaptive layout** - Optimized for desktop and medium screen sizes.
 - **Custom MUI theme** - Consistent color palette, typography, spacing, and hover effects.
-- **Elegant UI details** - Subtle shadows, transitions, glassmorphism effects, and smooth interactions.
+- **Refined UI details** - Subtle shadows, transitions, glassmorphism effects, and smooth interactions.
 
 ---
 
@@ -56,7 +56,7 @@ Below is a summary of the main technologies and their roles:
 The interface is built with **Material UI (MUI)** as the foundation, combined with **custom CSS** for visual refinement and micro-interactions.  
 The design focuses on simplicity, clarity, and consistency across all components.
 
-Core UI behaviors such as hover transitions, blur effects, and responsive layouts are implemented through a blend of **MUI theming** and **custom class-based styling**, maintaining a clean, modern appearance while ensuring accessibility and usability.
+Core UI behaviors such as hover transitions, blur effects, and adaptive layouts are implemented through a blend of **MUI theming** and **custom CSS styling**, maintaining a clean, modern appearance while ensuring accessibility and usability.
 
 
 ---
@@ -124,7 +124,7 @@ backend/
 1. User types a query in the **hero search bar**.  
 2. Request sent via Axios to Flask endpoint `/api/books/search?q=...`.  
 3. Flask calls Google Books API, normalizes response, and caches it.  
-4. React Query updates state and re-renders results grid.  
+4. React Query updates state and re-renders results table.  
 5. Clicking a book opens a **Book Details page**, with description, author, and cover image.
 
 ---
@@ -229,33 +229,6 @@ All tests pass successfully ✅
 
 ---
 
-##  Development Guidelines
-
-* Follow **PEP8** (Python) and **ESLint** (JavaScript) conventions.
-* Keep components **small, pure, and reusable**.
-* Maintain **clean commits** (`feat:`, `fix:`, `docs:`, `style:`, `test:`).
-* Avoid committing `.env`, build files, or virtual environments.
-
----
-
-## Design Philosophy
-
-The frontend design focuses on clarity, consistency, and ease of use.  
-It combines Material UI’s theming with lightweight custom CSS for smooth interaction and clean presentation,  
-keeping the interface simple, accessible, and user-friendly.
-
----
-
-##  Deployment (Optional)
-
-The system can be deployed as:
-
-* **Flask backend →** Render / Railway / Heroku
-* **React frontend →** Netlify / Vercel
-
-CORS setup ensures seamless API ↔ client communication.
-
----
 
 ##  Project Status
 
@@ -264,8 +237,36 @@ CORS setup ensures seamless API ↔ client communication.
 | **Backend**     | ✅ Complete  | Fully tested & documented   |
 | **Frontend**    | ✅ Complete  | Auth, UI, search, routing   |
 | **Design & UX** | ✅ Finalized | Theme + custom CSS tuned    |
-| **Testing**     | ✅ Complete  | Pytest suite successful |
-| **Deployment**  | ⚙️ Ready    | Environment-ready structure |
+| **Testing**     | ✅ Complete  | Pytest suite successful     |
+| **Deployment**  | ✅ Live      | Available for demo testing  |
 
+
+---
+
+## 🌐 Live Demo
+
+Explore the live version here:  
+🔗 [https://book-finder-naama.netlify.app](https://book-finder-naama.netlify.app)
+
+> ⚠️ **Note:**  
+> The backend (hosted on Render’s free tier) may take a few seconds to wake up after periods of inactivity.  
+> This is normal behavior — please wait a few seconds on first load.
+
+---
+
+###  Deployment Details
+
+- **Frontend:** Deployed on **Netlify**, built with **React (Vite)**.  
+- **Backend:** Deployed on **Render**, powered by **Flask** API.  
+- **CORS configured** for both `localhost:5173` and the Netlify domain.  
+- **Environment variable:**  
+  ```env
+  VITE_API_BASE_URL=https://book-finder-e8zx.onrender.com
+---
+
+### 💡 Developer Tip
+
+If the page appears blank or loads slowly at first, the backend service is just waking up.
+After that, responses will be instant.
 
 ---
