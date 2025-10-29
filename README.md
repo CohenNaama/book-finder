@@ -238,19 +238,17 @@ All tests pass successfully ✅
 | **Frontend**    | ✅ Complete  | Auth, UI, search, routing   |
 | **Design & UX** | ✅ Finalized | Theme + custom CSS tuned    |
 | **Testing**     | ✅ Complete  | Pytest suite successful     |
-| **Deployment**  | ✅ Live      | Available for demo testing  |
+| **Deployment**  |  💤 Archived | Fully deployed on Netlify + Render, later archived  |
 
 
 ---
 
-## 🌐 Live Demo
+## 🌐 Live Demo (Archived)
 
-Explore the live version here:  
-🔗 [https://book-finder-naama.netlify.app](https://book-finder-naama.netlify.app)
+The live demo, previously deployed on **Netlify** (frontend) and **Render** (backend), has been **archived**.  
+It was fully deployed and tested in a cloud environment, and later taken offline to **optimize resource usage** after the evaluation phase.  
+The project remains **fully functional locally** — see the “Getting Started” section below for setup instructions.
 
-> ⚠️ **Note:**  
-> The backend (hosted on Render’s free tier) may take a few seconds to wake up after periods of inactivity.  
-> This is normal behavior — please wait a few seconds on first load.
 
 ---
 
@@ -262,11 +260,8 @@ Explore the live version here:
 - **Environment variable:**  
   ```env
   VITE_API_BASE_URL=https://book-finder-e8zx.onrender.com
----
+  ```
 
-### 💡 Developer Tip
-
-If the page appears blank or loads slowly at first, the backend service is just waking up.
-After that, responses will be instant.
+This section summarizes the previous production deployment setup.
 
 ---
